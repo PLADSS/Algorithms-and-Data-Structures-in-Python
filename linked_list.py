@@ -62,3 +62,18 @@ class LinkedList:
                 nodes.append("[%s]" % current.data)
             current = current.next
         return '->'.join(nodes)
+    
+    def search(self,key):
+        """
+        Search for the first node containing data that matches the key
+        Returns the node or 'None' if not found
+        Takes O(n) time
+        """
+        current = self.head
+
+        while current:
+            if current.data == key:
+                return current
+            else:
+                current = current.next
+        return None
