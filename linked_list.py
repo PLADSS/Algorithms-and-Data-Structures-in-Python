@@ -44,6 +44,24 @@ class LinkedList:
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
+    
+    def node_at_index(self,index):
+        """
+        Returns the Node at specified index
+        Takes O(n) time
+        """
+        if index == 0:
+            return self.head
+        else:
+            current = self.head
+            possition = 0
+
+        while possition < index:
+            current = current.next
+            possition += 1
+        return current
+        
+
 
     def __repr__(self):
         """
